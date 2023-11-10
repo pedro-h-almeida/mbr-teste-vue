@@ -40,6 +40,7 @@ export default route(function (/* { store, ssrContext } */) {
     // console.log("to: ", to);
     // console.log("from: ", from);
     // console.log("-----------------");
+    headerStore.currentPath = to.path.split("/").filter((path) => path);
     headerStore.pageTitle = to.meta.pageTitle;
   });
 

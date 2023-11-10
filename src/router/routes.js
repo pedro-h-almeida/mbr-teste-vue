@@ -12,27 +12,25 @@ const routes = [
         component: () => import("src/pages/MainPage.vue"),
         meta: { pageTitle: "Página Inicial" },
       },
-      // {
-      //   path: "/market-share",
-      //   name: "Market Share Render",
-      //   component: { render: () => h(RouterView) },
-      //   children: [
-      //     {
-      //       path: "",
-      //       name: "Market Share List",
-      //       component: () =>
-      //         import("src/pages/MarketShare/MarketShareList.vue"),
-      //       meta: { pageTitle: "Market Share" },
-      //     },
-      //     {
-      //       path: "form",
-      //       name: "Market Share Form",
-      //       component: () =>
-      //         import("src/pages/MarketShare/MarketShareForm.vue"),
-      //       meta: { pageTitle: "Market Share", showBackButton: true },
-      //     },
-      //   ],
-      // },
+      {
+        path: "/aluno",
+        name: "Aluno Page Render",
+        component: { render: () => h(RouterView) },
+        children: [
+          {
+            path: "",
+            name: "Aluno Page",
+            component: () => import("src/pages/AlunoPage.vue"),
+            meta: { pageTitle: "Aluno" },
+          },
+          {
+            path: "questionario",
+            name: "Questionario Page",
+            component: () => import("src/pages/QuestionarioPage.vue"),
+            meta: { pageTitle: "Questionario" },
+          },
+        ],
+      },
     ],
   },
 

@@ -2,9 +2,15 @@
   <q-layout view="hHh lpR fFf">
     <q-header bordered>
       <q-toolbar>
-        <q-toolbar-title class="text-center">
-          {{ headerStore.pageTitle }}
-        </q-toolbar-title>
+        <q-breadcrumbs active-color="white" style="font-size: 16px">
+          <q-breadcrumbs-el label="Página Inicial" to="/" />
+          <q-breadcrumbs-el
+            v-for="(element, index) in headerStore.currentPath"
+            v-bind:key="index"
+            :label="element[0].toUpperCase() + element.slice(1, element.length)"
+            :to="`/${headerStore.currentPath.slice(0, index + 1).join('/')}`"
+          />
+        </q-breadcrumbs>
       </q-toolbar>
     </q-header>
 
